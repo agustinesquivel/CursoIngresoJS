@@ -25,15 +25,18 @@ function ComenzarIngreso ()
 while (contador<1){
     contador++;
     edad=prompt("ingrese edad");
-    sexo=prompt ("ingrese sexo");
-    estadocivil=prompt("ingrese estado civil");
-    sueldobruto=prompt("igrese sueldo bruto");
-    numerodelegajo=prompt("ingrese numeroe de legajo");
-    nacionalidad=prompt("ingrese nacionalidad");
-
-    if (edad>18 && edad<90){
+    edad=parseInt(edad);
+    while (!(edad>17 && edad<91)){
+        edad=prompt("ingrese una edad valida");
+    }
+    if (edad>17 && edad<91){
         document.getElementById("Edad").value=edad;
     }
+    sexo=prompt ("ingrese sexo");
+    sexo=sexo.toLowerCase();
+    while(!(sexo=="m" || sexo=="f")){
+          sexo=prompt("ingrese un sexo valido");
+      }  
     if (sexo=="m" || sexo=="f"){
         switch(sexo){
             case ("m"):
@@ -44,6 +47,96 @@ while (contador<1){
                 break;
         }
         document.getElementById("Sexo").value=sexo;
+    }
+
+    estadocivil=prompt("ingrese estado civil");
+    estadocivil=parseInt(estadocivil);
+    while (!(estadocivil=="1" || estadocivil=="2" || estadocivil=="3" || estadocivil=="4")){
+        estadocivil=prompt("ingrese un estado civil valido");
+    }
+    if(estadocivil=="1" || estadocivil=="2" || estadocivil=="3" || estadocivil=="4"){
+        switch(estadocivil){
+            case("1"):
+            estadocivil="Soltero";
+            break;
+            case ("2"):
+            estadocivil="Casado";
+            break;
+            case ("3"):
+            estadocivil="Divorciado";
+            break;
+            default:
+                estadocivil="Viudo";
+                break;
+
+    }
+    document.getElementById("EstadoCivil").value=estadocivil;
+    }
+
+    sueldobruto=prompt("igrese sueldo bruto");
+    sueldobruto=parseInt(sueldobruto);
+    if(sueldobruto>8000){
+    document.getElementById("Sueldo").value=sueldobruto;
+}else{
+    while(sueldobruto<"8000"){
+    sueldobruto=prompt("ingrese sueldo bruto correcto");
+    document.getElementById("Sueldo").value=sueldobruto;
+}
+}
+
+    numerodelegajo=parseInt(prompt("ingrese numero de legajo"));
+    numerodelegajo=parseInt(numerodelegajo);
+    if (numerodelegajo>1000){
+    document.getElementById("Legajo").value=numerodelegajo;
+    }else{
+    while(numerodelegajo<1000){
+        numerodelegajo=prompt ("ingrese numero de legajo correcto");
+    }
+}
+
+
+    nacionalidad=prompt("ingrese nacionalidad");
+    nacionalidad=nacionalidad.toLowerCase();
+     if(nacionalidad=="a" || nacionalidad=="e" || nacionalidad=="n"){
+      switch(nacionalidad){
+          case "a":
+          nacionalidad="Argentina";
+          break;
+          case "e":
+          nacionalidad="Extranjero";
+          break;
+          default:
+          nacionalidad="Nacionalizados";
+          break;
+        }
+          document.getElementById("Nacionalidad").value=nacionalidad;
+     }
+}
+}
+          
+   
+   
+   /* while (!(edad>17 && edad<91)){
+        edad=prompt("ingrese una edad valida");
+    }
+    if (edad>17 && edad<91){
+        document.getElementById("Edad").value=edad;
+    }
+      while(!(sexo=="m" || sexo=="f")){
+          sexo=prompt("ingrese un sexo valido");
+      }  
+    if (sexo=="m" || sexo=="f"){
+        switch(sexo){
+            case ("m"):
+            sexo="masculino";
+            break;
+           default:
+                sexo="femenino";
+                break;
+        }
+        document.getElementById("Sexo").value=sexo;
+    }while (!(estadocivil=="1" || estadocivil=="2" || estadocivil=="3" || estadocivil=="4")){
+        estadocivil=prompt("ingrese un estado civil valido");
     }
     if(estadocivil=="1" || estadocivil=="2" || estadocivil=="3" || estadocivil=="4"){
         switch(estadocivil){
@@ -70,22 +163,36 @@ if(sueldobruto>8000){
     sueldobruto=prompt("ingrese sueldo bruto correcto");
     document.getElementById("Sueldo").value=sueldobruto;
 }
+}
+while(!(nacionalidad=="a" || nacionalidad=="e" || nacionalidad=="n")){
+    nacionalidad=prompt("ingrese una nacionalidad valida")
+}
+if (numerodelegajo>1000){
+    document.getElementById("Legajo").value=numerodelegajo;
+}else{
+    while(numerodelegajo<1000){
+        numerodelegajo=prompt ("ingrese numero de legajo correcto");
+    }
+}
+}
   if(nacionalidad=="a" || nacionalidad=="e" || nacionalidad=="n"){
       switch(nacionalidad){
-          case ("a"):
+          case "a":
           nacionalidad="Argentina";
           break;
-          case ("e"):
+          case "e":
           nacionalidad="Extranjero";
           break;
           default:
-          nacionalidad="Nacionalizados"
-          break;}
+          nacionalidad="Nacionalizados";
+          break;
+        }
           document.getElementById("Nacionalidad").value=nacionalidad;
           }
-          }
-      }
-  }
+          */
+          
+
+  
 
 
     
