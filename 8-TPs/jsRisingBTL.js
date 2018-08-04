@@ -17,7 +17,7 @@ function ComenzarIngreso ()
  var estadocivil;
  estadocivil=parseInt(estadocivil);
  var sueldobruto;
- sueldobruto=parseInt(sueldobruto);
+ sueldobruto=parseFloat(sueldobruto);
  var numerodelegajo;
  numerodelegajo=parseInt(numerodelegajo);
  var nacionalidad;
@@ -26,7 +26,7 @@ while (contador<1){
     contador++;
     edad=prompt("ingrese edad");
     edad=parseInt(edad);
-    while (!(edad>17 && edad<91)){
+    while (!(edad>17 && edad<91)|| isNaN(edad)){
         edad=prompt("ingrese una edad valida");
     }
     if (edad>17 && edad<91){
@@ -51,7 +51,7 @@ while (contador<1){
 
     estadocivil=prompt("ingrese estado civil");
     estadocivil=parseInt(estadocivil);
-    while (!(estadocivil=="1" || estadocivil=="2" || estadocivil=="3" || estadocivil=="4")){
+    while (!(estadocivil=="1" || estadocivil=="2" || estadocivil=="3" || estadocivil=="4")||isNaN(estadocivil)){
         estadocivil=prompt("ingrese un estado civil valido");
     }
     if(estadocivil=="1" || estadocivil=="2" || estadocivil=="3" || estadocivil=="4"){
@@ -74,26 +74,23 @@ while (contador<1){
     }
 
     sueldobruto=prompt("igrese sueldo bruto");
-    sueldobruto=parseInt(sueldobruto);
+    sueldobruto=parseFloat(sueldobruto);
     if(sueldobruto>8000){
     document.getElementById("Sueldo").value=sueldobruto;
 }else{
-    while(sueldobruto<"8000"){
+    while(sueldobruto<8000 || isNaN(sueldobruto)){
     sueldobruto=prompt("ingrese sueldo bruto correcto");
     document.getElementById("Sueldo").value=sueldobruto;
 }
 }
 
     numerodelegajo=parseInt(prompt("ingrese numero de legajo"));
-    numerodelegajo=parseInt(numerodelegajo);
-    if (numerodelegajo>1000){
-    document.getElementById("Legajo").value=numerodelegajo;
-    }else{
-    while(numerodelegajo<1000){
+    while(numerodelegajo<1000 || numerodelegajo>9999 || isNaN(numerodelegajo)){
         numerodelegajo=prompt ("ingrese numero de legajo correcto");
+        numerodelegajo=parseInt(numerodelegajo);
+        
     }
-}
-
+    document.getElementById("Legajo").value=numerodelegajo;
 
     nacionalidad=prompt("ingrese nacionalidad");
     nacionalidad=nacionalidad.toLowerCase();
@@ -113,7 +110,7 @@ while (contador<1){
      }
 }
 }
-          
+
    
    
    /* while (!(edad>17 && edad<91)){
