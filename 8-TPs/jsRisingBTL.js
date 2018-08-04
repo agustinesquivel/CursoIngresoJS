@@ -9,5 +9,86 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- 
+ var edad;
+ edad=parseInt(edad);
+ var sexo;
+ var contador;
+ contador=0;
+ var estadocivil;
+ estadocivil=parseInt(estadocivil);
+ var sueldobruto;
+ sueldobruto=parseInt(sueldobruto);
+ var numerodelegajo;
+ numerodelegajo=parseInt(numerodelegajo);
+ var nacionalidad;
+
+while (contador<1){
+    contador++;
+    edad=prompt("ingrese edad");
+    sexo=prompt ("ingrese sexo");
+    estadocivil=prompt("ingrese estado civil");
+    sueldobruto=prompt("igrese sueldo bruto");
+    numerodelegajo=prompt("ingrese numeroe de legajo");
+    nacionalidad=prompt("ingrese nacionalidad");
+
+    if (edad>18 && edad<90){
+        document.getElementById("Edad").value=edad;
+    }
+    if (sexo=="m" || sexo=="f"){
+        switch(sexo){
+            case ("m"):
+            sexo="masculino";
+            break;
+           default:
+                sexo="femenino";
+                break;
+        }
+        document.getElementById("Sexo").value=sexo;
+    }
+    if(estadocivil=="1" || estadocivil=="2" || estadocivil=="3" || estadocivil=="4"){
+        switch(estadocivil){
+            case("1"):
+            estadocivil="Soltero";
+            break;
+            case ("2"):
+            estadocivil="Casado";
+            break;
+            case ("3"):
+            estadocivil="Divorciado";
+            break;
+            default:
+                estadocivil="Viudo";
+                break;
+
+    }
+    document.getElementById("EstadoCivil").value=estadocivil;
 }
+if(sueldobruto>8000){
+    document.getElementById("Sueldo").value=sueldobruto;
+}else{
+    while(sueldobruto<8000){
+    sueldobruto=prompt("ingrese sueldo bruto correcto");
+    document.getElementById("Sueldo").value=sueldobruto;
+}
+  if(nacionalidad=="a" || nacionalidad=="e" || nacionalidad=="n"){
+      switch(nacionalidad){
+          case ("a"):
+          nacionalidad="Argentina";
+          break;
+          case ("e"):
+          nacionalidad="Extranjero";
+          break;
+          default:
+          nacionalidad="Nacionalizados"
+          break;}
+          document.getElementById("Nacionalidad").value=nacionalidad;
+          }
+          }
+      }
+  }
+
+
+    
+
+
+
